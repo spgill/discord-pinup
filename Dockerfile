@@ -1,4 +1,4 @@
-FROM python:3-slim-bullseye
+FROM python:3.11-slim-bookworm
 SHELL ["/bin/bash", "-c"]
 
 # Add Tini
@@ -11,13 +11,13 @@ COPY . /opt/discord-pinup
 WORKDIR /opt/discord-pinup
 
 # Install build essentials
-RUN apt update && \
-    apt -y install --no-install-recommends build-essential && \
-    rm -rf /var/lib/apt/lists/* && \
-    apt clean
+# RUN apt update && \
+#     apt -y install --no-install-recommends build-essential && \
+#     rm -rf /var/lib/apt/lists/* && \
+#     apt clean
 
 # Install python requirements
 RUN pip install -r requirements.txt
 
 # Run the server
-ENTRYPOINT ["/tini", "-v", "--", "./docker-entrypoint.sh"]
+ENTRYPOINT ["/tini", "-v", "--", "/opt/discord-pinup/docker-entrypoint.sh"]

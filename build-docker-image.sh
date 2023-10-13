@@ -6,8 +6,8 @@ cat .gitignore custom.dockerignore > .dockerignore
 # Build the docker image
 FILE="Dockerfile"
 TAG="docker.home.spgill.me/discord-pinup"
-FROM="python:3-slim-bullseye"
-# PUSH=false
+FROM="python:3.11-slim-bookworm"
+PUSH=true
 
 docker rmi "$TAG:previous"
 docker tag "$TAG:latest" "$TAG:previous"

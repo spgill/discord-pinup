@@ -21,8 +21,11 @@
   "peacock.remoteColor": "#E97777",
 
   "[python]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+    
   },
-  "python.formatting.provider": "black",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "python.analysis.typeCheckingMode": "basic"
 }
