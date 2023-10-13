@@ -1,3 +1,4 @@
 {
-  "image": "docker.home.spgill.me/dev-environment:latest"
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "remoteUser": "root"
 }
